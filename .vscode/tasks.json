@@ -1,0 +1,18 @@
+
+
+// A task runner configuration for gulp. Gulp provides a less task
+// which compiles less to css.
+
+{
+	"version": "0.1.0",
+	"command": "gulp",
+	"isShellCommand": true,
+	"tasks": [
+		{
+			"taskName": "setup",
+			"isBuildCommand": true,
+			"showOutput": "silent"
+		}
+	]
+}
+
