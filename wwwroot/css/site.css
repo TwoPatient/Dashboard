@@ -1,19 +1,62 @@
-body { padding-top: 50px; }
+body { padding-top: 0px; }
 
 a { color: #eee }
+
+a:hover { 
+    color: #ffa500;
+}
+
+a:focus {
+    color: #ffa500;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background: #333;
+}
+
+.nav > li {
+    white-space: nowrap;
+}
 
 /*
     Top Navbar
 */
+.navbar {
+    min-height: 40px;
+    max-height: 40px;
+}
+
+.navbar-brand {
+    height: 40px;
+    padding: 10px 10px;
+}
+
+.navbar-form, .navbar-toggle {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 .navbar-fixed-top {
     z-index: 2002;
     background: #222;
+    margin-left: 220px;
+    -webkit-transition: margin-left 0.5s; /* Safari */
+    transition: margin-left 0.5s;
+}
+
+.navbar-fixed-top.navbar-static-side-minimized {
+    margin-left: 44px;
+    -webkit-transition: margin-left 0.5s; /* Safari */
+    transition: margin-left 0.5s;
 }
 
 /*
 navbar-minimalize
 */
-
+.navbar-minimalize {
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
 
 /*
     Side Navbar
@@ -22,8 +65,20 @@ navbar-minimalize
     z-index: 2001;
     position: fixed;
     width: 220px; 
-    background: #333;
+    background: #222;
     height: 100%;
+    -webkit-transition: width 0.5s; /* Safari */
+    transition: width 0.5s;
+}
+
+.navbar-static-side.navbar-static-side-minimized {
+    width: 44px;
+    -webkit-transition: width 0.5s; /* Safari */
+    transition: width 0.5s;
+}
+
+.navbar-static-side.navbar-static-side-minimized .nav-label {
+    display:none;
 }
 
 .login-section {
@@ -34,18 +89,32 @@ navbar-minimalize
     Page Wrapper
 */
 
-#page-wrapper {
-    padding: 0 15px;
+.body-content {
+    background:#eaeaea; 
+    min-height: 100%;
+    margin-left: 220px;
+    -webkit-transition: margin-left 0.5s; /* Safari */
+    transition: margin-left 0.5s;
+}
+
+.body-content.navbar-static-side-minimized {
+    margin-left: 44px;
+    -webkit-transition: margin-left 0.5s; /* Safari */
+    transition: margin-left 0.5s;
 }
 
 /*
     Media Queries
 */
 @media (min-width: 768px) {
-    #page-wrapper {
-        position: inherit;
-        margin: 0 0 0 220px;
-        min-height: 1200px;
+
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-fixed-top {
+        margin-left:220px;
     }
 
     .navbar-static-side {
@@ -61,10 +130,9 @@ navbar-minimalize
 }
 
 @media (max-width: 768px) {
-    #page-wrapper {
-        position: inherit;
-        margin: 0 0 0 0;
-        min-height: 1000px;
+
+    .navbar-fixed-top {
+        margin-left:44px;
     }
 
     .navbar-static-side {
